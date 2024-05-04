@@ -29,12 +29,14 @@
           >
         </div>
         <nav class="header-section__nav">
-          <ul class="nav-links">
-            <li><a class="nav-link" href="index.html">Studio</a></li>
+          <ul class="header-section__nav-links">
             <li>
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
+              <a href="index.html">Studio</a>
             </li>
-            <li><a class="nav-link" href="#">Contacts</a></li>
+            <li>
+              <a href="portfolio.html">Portfolio</a>
+            </li>
+            <li><a href="#">Contacts</a></li>
           </ul>
         </nav>
         <div>
@@ -61,7 +63,9 @@
           <h1 class="hero-section__title">
             EFFECTIVE SOLUTIONS FOR <br />YOUR BUSINESS
           </h1>
-          <button class="hero-section__btn">Request our service</button>
+          <button data-modal-open class="hero-section__btn">
+            Request our service
+          </button>
         </div>
       </section>
       <!--about section-->
@@ -124,25 +128,19 @@
         <div class="container">
           <h2 class="we-do-section__title">What we do</h2>
           <!--div cu imagini-->
-          <div class="we-do__images">
-            <img
-              class="we-do__image"
-              src="./images/poza-1.jpg"
-              alt="poza-1"
-              width="200"
-            />
-            <img
-              class="we-do__image"
-              src="./images/poza-2.jpg"
-              alt="poza-2"
-              width="200"
-            />
-            <img
-              class="we-do__image"
-              src="./images/poza-3.jpg"
-              alt="poza-3"
-              width="200"
-            />
+          <div class="we-do__cards">
+            <div class="we-do__image">
+              <div class="we-do__text">DESIGN SOLUTIONS</div>
+              <img src="./images/poza-1.jpg" alt="poza-1" width="200" />
+            </div>
+            <div class="we-do__image">
+              <div class="we-do__text">DESIGN SOLUTIONS</div>
+              <img src="./images/poza-2.jpg" alt="poza-2" width="200" />
+            </div>
+            <div class="we-do__image">
+              <div class="we-do__text">DESIGN SOLUTIONS</div>
+              <img src="./images/poza-3.jpg" alt="poza-3" width="200" />
+            </div>
           </div>
         </div>
       </section>
@@ -456,5 +454,15 @@
         </div>
       </div>
     </footer>
+    <div data-modal class="is-hidden">
+      <div data-modal-content>
+        <button data-modal-close type="button">
+          <svg class="data-modal-content">
+            <use href="./images/icons.svg/#close.svg" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
   </body>
 </html>

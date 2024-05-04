@@ -75,19 +75,36 @@ body {
   gap: 50px;
   margin-top: 32px;
   margin-bottom: 32px;
+  text-decoration: none;
 }
-.nav-link {
+
+.header-section__nav a {
   font-size: 14px;
   font-weight: 500;
   color: var(--black);
   line-height: 16.41px;
   text-decoration: none;
+  position: relative;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.header-section__nav a:hover::after,
+.header-section__nav a:focus::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--blue);
+  border-radius: 2px;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-section__nav-links :hover,
+.header-section__nav-links :focus {
   color: var(--blue);
-  text-decoration: underline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-section__mail {
   color: var(--grey);
@@ -106,10 +123,14 @@ body {
 .header-section__icon-mail:hover,
 .header-section__icon-mail:focus {
   fill: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-section__icon-tel:hover,
 .header-section__icon-tel:focus {
   fill: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-section__tel {
   color: var(--grey);
@@ -118,11 +139,15 @@ body {
 .header-section__mail:focus {
   color: var(--blue);
   text-decoration: underline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-section__tel:hover,
 .header-section__tel:focus {
   color: var(--blue);
   text-decoration: underline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*stilizare pentru hero section*/
@@ -211,13 +236,37 @@ body {
   text-transform: uppercase;
   padding-bottom: 50px;
 }
-.we-do__images {
+.we-do__cards {
   display: flex;
   gap: 30px;
 }
-.we-do__image {
+.we-do__image img {
   width: 370px;
   height: 294px;
+}
+
+.we-do__image {
+  position: relative;
+  overflow: hidden;
+}
+.we-do__text {
+  position: absolute;
+  top: 230px;
+  left: 0;
+  width: 370px;
+  height: 70px;
+  font-family: var(--primary-font);
+  color: var(--white);
+  font-weight: 700;
+  line-height: 16px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
 }
 /*stilizare pentru our team section*/
 .our-team-section .container {
@@ -288,6 +337,8 @@ body {
 .our-team__social :focus {
   fill: var(--white);
   background-color: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*stilizare pentru cards section*/
@@ -322,6 +373,8 @@ body {
   color: var(--white);
   box-shadow: 0px 2px 2px 0px #0000001f, 0px 1px 2px 0px #00000014,
     0px 3px 1px 0px #0000001a;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards__images {
@@ -330,11 +383,15 @@ body {
   gap: 30px;
   border-bottom: 1px solid #eeeeee;
 }
-.cards__image:hover {
+.cards__card:hover {
   background-color: var(--white);
   box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f,
     0px 1px 1px 0px #0000001f;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--blue);
 }
+
 .cards__title {
   font-weight: 700;
   font-size: 18px;
@@ -351,6 +408,33 @@ body {
   color: var(--grey);
   padding-bottom: 20px;
   padding-left: 24px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue);
+  transition-duration: 250ms;
+  transform: translateY(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--white);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  padding: 63px 24px 91px 24px;
+}
+.cards__card {
+  position: relative;
+  overflow: hidden;
+}
+.cards__card:hover .overlay {
+  transform: translateY(0);
 }
 /*stilizare pentru regular-section*/
 .regular__title {
@@ -386,6 +470,8 @@ body {
 .regular__icons :focus {
   fill: var(--blue);
   border-color: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*stilizare pentru footer section*/
 .footer-section {
@@ -424,6 +510,8 @@ body {
 .footer-section__contact:focus {
   color: var(--blue);
   text-decoration: underline;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-section__subtitle {
   display: flex;
@@ -459,10 +547,68 @@ body {
 .footer-section__social li:hover,
 .footer-section__social li:focus {
   background-color: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .container {
   width: 1200px;
   display: flex;
   margin-right: auto;
   margin-left: auto;
+}
+
+/*stilizare pentru modal*/
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+[data-modal] {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-modal-content] {
+  width: 528px;
+  height: 581px;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition-duration: 1s;
+  padding: auto;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+[data-modal-close] {
+  top: 10px;
+  position: absolute;
+  right: 10px;
+}
+
+.is-hidden [data-modal-content] {
+  transform: scale(1.5);
+}
+[data-modal-close] {
+  color: #212121;
+  width: 30px;
+  height: 30px;
+  padding: 3px 3px 4px 4px;
+  border-radius: 100%;
+  border: 1px solid #0000001a;
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  margin-left: 6px;
+  background-color: #ffffff;
 }
