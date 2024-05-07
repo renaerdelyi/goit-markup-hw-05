@@ -120,34 +120,15 @@ body {
   width: 10px;
   height: 16px;
 }
-.header-section__icon-mail:hover,
-.header-section__icon-mail:focus {
+.header-section__contacts a:hover,
+.header-section__contacts a:focus {
   fill: var(--blue);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-section__icon-tel:hover,
-.header-section__icon-tel:focus {
-  fill: var(--blue);
+  color: var(--blue);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-section__tel {
   color: var(--grey);
-}
-.header-section__mail:hover,
-.header-section__mail:focus {
-  color: var(--blue);
-  text-decoration: underline;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-section__tel:hover,
-.header-section__tel:focus {
-  color: var(--blue);
-  text-decoration: underline;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*stilizare pentru hero section*/
@@ -185,6 +166,7 @@ body {
   border-color: var(--blue);
   margin-top: 40px;
   margin-bottom: 210px;
+  cursor: pointer;
 }
 /*stilizare pentru about section*/
 .about-section .container {
@@ -365,6 +347,7 @@ body {
   border: none;
   border-radius: 4px 0px 0px 0px;
   padding: 6px 22px 6px 22px;
+  cursor: pointer;
 }
 
 .cards-btn__item:hover,
@@ -573,6 +556,10 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.is-hidden [data-modal-content] {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
 [data-modal-content] {
   width: 528px;
   height: 581px;
@@ -589,26 +576,17 @@ body {
 }
 
 [data-modal-close] {
-  top: 10px;
   position: absolute;
-  right: 10px;
-}
-
-.is-hidden [data-modal-content] {
-  transform: scale(1.5);
-}
-[data-modal-close] {
-  color: #212121;
+  color: #000000;
+  top: 8px;
+  right: 8px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-  padding: 3px 3px 4px 4px;
+  padding: 9px 9px 10px 10px;
   border-radius: 100%;
   border: 1px solid #0000001a;
-  margin: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6px;
-  margin-left: 6px;
-  background-color: #ffffff;
 }
