@@ -100,8 +100,8 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-section__nav-links :hover,
-.header-section__nav-links :focus {
+.header-section__nav-links a:hover,
+.header-section__nav-links a:focus {
   color: var(--blue);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,6 +130,20 @@ body {
 .header-section__tel {
   color: var(--grey);
 }
+/* .underline:hover::after {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: var(--blue);
+  width: 58px;
+  height: 4px;
+  border-radius: 2px;
+  position: absolute;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: ;
+} */
 
 /*stilizare pentru hero section*/
 .hero-section .container {
@@ -366,7 +380,7 @@ body {
   gap: 30px;
   border-bottom: 1px solid #eeeeee;
 }
-.cards__card:hover {
+.cards__overlay:hover {
   background-color: var(--white);
   box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f,
     0px 1px 1px 0px #0000001f;
@@ -412,11 +426,11 @@ body {
   line-height: 28px;
   padding: 63px 24px 91px 24px;
 }
-.cards__card {
+.cards__overlay {
   position: relative;
   overflow: hidden;
 }
-.cards__card:hover .overlay {
+.cards__overlay:hover .overlay {
   transform: translateY(0);
 }
 /*stilizare pentru regular-section*/
@@ -569,7 +583,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition-duration: 1s;
-  padding: auto;
+
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
